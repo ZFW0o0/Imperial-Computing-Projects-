@@ -1,0 +1,25 @@
+Summarise your findings here (see specification).
+
+*mystery1 and mystery3 are solvable, mystery 2 is impossible to solve
+*mystery1 is of "extremely hard" difficulty.
+*mystery3 is of "hard" difficulty.
+
+How to know if sudoku is solvable?
+a sudoku board is solvable if there exists a possibility where there
+are no same digits on the same row, column and sub-board. If such
+possibility does not exist, it is unsolvable.  
+
+How to identify sudoku difficulty?
+I use a variable count to record the number of times a digit is attempted to be
+filled into a position. That activity is carried out by make_move(), so
+count is incremented whenever make_move is called. The more attempts
+it takes to complete the entire sudoku board, the harder the sudoku
+is. The count variable turns out to be 421,546 for mystery1 and 14,133
+for mystery3. Thus mystery1 is of "extremely hard" difficulty and
+mystery3 is of "hard" difficulty. 
+
+However, this measurement of difficulty might not be fully
+reasonable in the sense of human. Human players would not start
+filling from the beginning of the sudoku board, yet they start from
+positions where more information is known, this way is more efficient.  
+
